@@ -1,0 +1,51 @@
+<div class="container">
+    <form [formGroup]="createUserForm" (ngSubmit)="createUser()">
+        <div class="border p-3 mt-4">
+            <div class="row pb-2">
+                <h2 class="text-primary">Create User</h2>
+                <hr />
+            </div>
+            <div class="mb-3">
+                <label>First Name</label>
+                <input class="form-control" id="firstname" type="text" formControlName="firstname" placeholder="Enter your first name" maxlength="16" required/>
+                <span class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label>Last Name</label>
+                <input class="form-control" id="lastname" type="text" formControlName="lastname" placeholder="Enter your last name" maxlength="16" required/>
+                <span class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label>Email Address</label>
+                <input class="form-control" id="email" type="text" formControlName="email" placeholder="Enter your email" required/>
+                <span class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label>Username</label>
+                <input class="form-control" id="username" type="text" formControlName="username" placeholder="Enter Username" maxlength="16" required/>
+                <span class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label>Password</label>
+                <input class="form-control" id="password" type="password" formControlName="password" placeholder="Enter password" maxlength="16" required />
+                <span class="text-danger"></span>
+            </div>
+            <label>Sex</label>
+            <select id="sex" formControlName="sex" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                <option selected disabled>Select Gender</option>
+                <option>Male</option>
+                <option>Female</option>
+            </select>
+            <label>Role</label>
+            <select id="role" formControlName="role" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                <option selected disabled>Select Role</option>
+                <option>User</option>
+                <option>Administrator</option>
+            </select>
+            <button type="submit" [disabled]="createUserForm.invalid" class="btn btn-primary" style="width:150px">Create User</button>
+            <a (click)="navigateToUserList()" class="btn btn-secondary mx-1" style="width:150px">
+                Back to List
+            </a>
+        </div>
+    </form>
+</div>

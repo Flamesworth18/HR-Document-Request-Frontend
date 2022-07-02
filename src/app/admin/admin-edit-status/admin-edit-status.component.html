@@ -1,0 +1,19 @@
+<div class="container">
+    <form [formGroup]="editStatusForm" (ngSubmit)="editStatus()">
+        <div class="border p-3 mt-4">
+            <div class="row pb-2">
+                <h2 class="text-primary">Edit Status</h2>
+                <hr />
+            </div>
+            <div class="mb-3">
+                <label>Status Name</label>
+                <input class="form-control" [(ngModel)]="tempStatus.name" id="name" type="text" formControlName="name" placeholder="Enter status name..." required/>
+                <span class="text-danger"></span>
+            </div>
+            <button type="submit" [disabled]="editStatusForm.invalid" class="btn btn-primary" style="width:150px">Edit Status</button>
+            <a (click)="navigateToStatusList()" class="btn btn-secondary mx-1" style="width:150px">
+                Back to List
+            </a>
+        </div>
+    </form>
+</div>

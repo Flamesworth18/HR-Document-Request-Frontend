@@ -1,0 +1,24 @@
+<div class="container">
+    <form [formGroup]="requestForm" (ngSubmit)="editRequest()">
+        <div class="border p-3 mt-4">
+            <div class="row pb-2">
+                <h2 class="text-primary">Edit Request</h2>
+                <hr />
+            </div>
+            <label>Purpose</label>
+            <select id="purpose" formControlName="purpose" [(ngModel)]="tempRequest.purpose" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                <option selected disabled>Select Purpose</option>
+                <option *ngFor="let purpose of purposes" [ngValue]="purpose.name">{{ purpose.name }}</option>
+            </select>
+            <label>Document Type</label>
+            <select id="type" formControlName="type" [(ngModel)]="tempRequest.document" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                <option selected disabled>Select Document Type</option>
+                <option *ngFor="let document of documents" [ngValue]="document.name">{{ document.name }}</option>
+            </select>
+            <button type="submit" class="btn btn-primary" style="width:150px">Edit Request</button>
+            <a (click)="navigateToRequestPage()" class="btn btn-secondary mx-1" style="width:150px">
+                Back to List
+            </a>
+        </div>
+    </form>
+</div>

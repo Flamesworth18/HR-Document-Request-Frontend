@@ -1,0 +1,52 @@
+
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="text-primary">Request List</h2>
+		</div>
+        <div class="col-6 text-end">
+            <a class="btn btn-primary" (click)="createRequest()">
+                <i class="fa-solid fa-circle-plus"></i> &nbsp; Create Request
+			</a>
+		</div>
+	</div>
+    <br /><br />
+
+<table class="table table-hover table-striped" style="width:100%">
+    <thead>
+        <tr>
+            <th>
+                Purpose
+			</th>
+            <th>
+                Document Type
+            </th>
+            <th>
+                Request Status
+			</th>
+            <th></th>
+            <th></th>
+		</tr>
+	</thead>
+    <tbody *ngIf="!(loader._isLoading | async)">
+            <tr *ngFor="let request of requests">
+                <td width="35%">
+                    {{ request.purpose }}
+				</td>
+                <td width="35%">
+                    {{ request.document }}
+                </td>
+                <td width="30%">
+                    {{ request.status }}
+				</td>
+                <td width="30%">
+                   <button class="btn btn-primary" *ngIf="request.status !== 'Accepted'" (click)="editRequest(request)"> <i class="fa-solid fa-pen-to-square"></i> Edit</button>
+				</td>
+                <td width="30%">
+                    <a class="btn btn-danger"(click)="confirmDelete(request)"> <i class="fa-solid fa-trash"></i> Delete</a>
+                </td>
+			</tr>
+    </tbody>
+
+</table>
+</div>

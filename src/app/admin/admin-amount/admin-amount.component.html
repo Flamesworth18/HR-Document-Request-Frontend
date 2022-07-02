@@ -1,0 +1,40 @@
+
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="text-primary">Amount List</h2>
+		</div>
+        <div class="col-6 text-end">
+            <a class="btn btn-primary" (click)="createAmount()">
+                <i class="fa-solid fa-circle-plus"></i> &nbsp; Add Amount
+			</a>
+		</div>
+	</div>
+    <br /><br />
+
+<table class="table table-hover table-striped" style="width:100%">
+    <thead>
+        <tr>
+            <th>
+                Amount
+			</th>
+            <th></th>
+            <th></th>
+		</tr>
+	</thead>
+    <tbody *ngIf="!(loader._isLoading | async)">
+            <tr *ngFor="let amount of amounts">
+                <td width="100%">
+                    ₱{{ amount.number }}
+				</td>
+                <td width="30%">
+                   <a class="btn btn-primary" (click)="editAmount(amount)"> <i class="fa-solid fa-pen-to-square"></i> Edit</a>
+				</td>
+                <td width="30%">
+                    <a class="btn btn-danger" (click)="confirmDelete(amount.id)"> <i class="fa-solid fa-trash"></i> Delete</a>
+                </td>
+			</tr>
+    </tbody>
+
+</table>
+</div>

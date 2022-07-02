@@ -1,0 +1,43 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container-fluid">
+    <a class="navbar-brand d-flex align-items-center justify-content-center text-primary" href="/dashboard" style="font-size: 22px; font-weight: 900; width: 40px; height: 40px; background: #fff; border-radius: .625rem">HR</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link active" href="/dashboard">Dashboard
+            <span class="visually-hidden">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/admin-request">Requests</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/admin-user">Users</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/admin-director">Directors</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/admin-document">Documents</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/admin-rank">Ranks</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/admin-status">Statuses</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/admin-purpose">Purposes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/admin-amount">Amounts</a>
+        </li>
+      </ul>
+      <button class="btn btn-outline-light" (click)="logoutUser()">Logout</button>
+    </div>
+  </div>
+</nav>

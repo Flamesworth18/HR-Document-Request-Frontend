@@ -1,0 +1,19 @@
+<div class="container">
+    <form [formGroup]="editPurposeForm" (ngSubmit)="editPurpose()">
+        <div class="border p-3 mt-4">
+            <div class="row pb-2">
+                <h2 class="text-primary">Edit Purpose</h2>
+                <hr />
+            </div>
+            <div class="mb-3">
+                <label>Purpose</label>
+                <input class="form-control" [(ngModel)]="tempPurpose.name" id="name" type="text" formControlName="name" placeholder="Enter purpose..." required/>
+                <span class="text-danger"></span>
+            </div>
+            <button type="submit" [disabled]="editPurposeForm.invalid" class="btn btn-primary" style="width:150px">Edit Purpose</button>
+            <a (click)="navigateToPurposeList()" class="btn btn-secondary mx-1" style="width:150px">
+                Back to List
+            </a>
+        </div>
+    </form>
+</div>

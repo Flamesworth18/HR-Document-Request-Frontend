@@ -1,0 +1,31 @@
+<div class="background">
+    <div class="container">
+        <div class="forms">
+            <div class="form login">
+                <span class="title">Forgot Password</span>
+                <form [formGroup]="forgotForm" (submit)="forgotPassword()">
+                    <div class="input-field">
+                        <input id="email" type="text" formControlName="email" placeholder="Enter your email" required>
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <div class="error" *ngIf="Email.errors?.['required'] && (Email.dirty)">
+                        Email is required!
+                    </div>
+                    <div class="error" *ngIf="Email.errors?.['email'] && (Email.dirty)">
+                        Email is Invalid!
+                    </div>
+    
+                    <div class="input-field button">
+                        <input type="submit" value="Reset" [disabled]="forgotForm.invalid">
+                    </div>
+                </form>
+    
+                <div class="login-signup">
+                    <span class="text">
+                        <a class="text signup-link" (click)="navigateToLogin()">Cancel</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

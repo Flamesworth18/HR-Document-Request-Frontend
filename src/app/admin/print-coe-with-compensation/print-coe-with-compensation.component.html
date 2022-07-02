@@ -1,0 +1,66 @@
+<div class="container text-center p-5 d-flex flex-column" *ngIf="!(loader._isLoading | async)">
+    <div class="button">
+        <button type="button" class="btn btn-secondary float-end" (click)="back()">Back</button>
+        <button type="button" class="btn btn-primary float-end mx-2" (click)="print()">Print</button>
+    </div>
+    <div class="img d-flex align-items-center justify-content-center">
+        <img style="width:100px" src=".\assets\images\usm_logo.png" alt="usm-logo">
+    </div>
+    <br>
+    <div class="h6">Republic of Philippines</div>
+    <div class="h6">UNIVERSITY OF SOUTHERN MINDANAO</div>
+    <p class="text-center">Kabacan, Cotabato</p>
+    <p class="text-center">Tel. No. (064)572-5299</p>
+    <div class="h6">CERTIFICATION</div>
+    <br>
+    <div class="h6">OFFICE OF THE HUMAN RESOURCE MANAGEMENT AND DEVELOPMENT</div>
+    <br>
+    <p class="text-start font-weight-bold">TO WHOM IT MAY CONCERN:</p>
+    <p class="lh-lg paragraph form-group form-text">
+        <span>This is to CERTIFY that</span> {{ p.firstName }} {{ p.lastName }} <span>is presently employed as </span><select style="text-transform: uppercase; font-weight: 700;" *ngIf="ranks.length" class="rank" required>
+            <option selected disabled>Select Rank</option>
+            <option *ngFor="let rank of ranks">{{ rank.name }}</option>
+        </select>
+        <span> on </span> <select class="status" required>
+            <option selected disabled>Select Status</option>
+            <option *ngFor="let status of statuses">{{ status.name }}</option>
+        </select> <span> status in the University of Southern Mindanao, Kabacan, Cotabato.</span> 
+        {{ genderIdentifier }} <span>employment with the university started from </span> <input class="no-border" type="date" [(ngModel)]="fromDate" required> <span>{{ getFromDate() }}</span> <span> to </span>
+        <input class="no-border" type="date" [(ngModel)]="toDate" required> <span>{{ getToDate() }}</span><span>.</span>
+    </p>
+    <br>
+    <p class="lh-lg paragraph form-text">
+        <span>Further, this is to certify that</span> {{p.firstName}} {{ p.lastName }} <span> has an annual basic gross compensation of ₱</span><select *ngIf="amounts.length" class="amount" required>
+            <option selected disabled>Select Amount</option>
+            <option *ngFor="let amount of amounts">{{ amount.number }}</option>
+        </select>
+    </p>
+    <br>
+    <p class="lh-lg paragraph form-text">
+        <span>Issued this </span> <span>{{ day }}</span> <span> day of </span> <span>{{ monthYear }}</span> <span> at USM, Kabacan, Cotabato upon the request 
+        of the above named person for </span> <select *ngIf="purposes.length" class="purpose" required>
+            <option selected disabled>Select Purpose</option>
+            <option *ngFor="let purpose of purposes">{{ purpose.name }}</option>
+        </select><span>.</span>
+    </p>
+    <br>
+    <br>
+    <div class="d-flex justify-content-end" style="z-index: 99;">
+
+        <div class="d-flex flex-column">
+            <select *ngIf="directors.length" class="director" required>
+                <option selected disabled>Select Director</option>
+                <option *ngFor="let director of directors">{{ director.name }}</option>
+            </select>
+            <p>Director</p>
+        </div>
+    </div>
+
+    <div class="img d-flex align-items-center justify-content-start" style="margin-top: -4.5rem;">
+        <img style="width:150px" src=".\assets\images\qr.png" alt="qr">
+    </div>
+    <br>
+    <div class="text-start">
+        <p>USM-HRD-F01</p>
+    </div>
+</div>

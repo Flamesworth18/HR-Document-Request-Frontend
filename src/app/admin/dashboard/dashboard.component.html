@@ -1,0 +1,17 @@
+<div class="container p-4">
+    <div class="h2 text-center">WELCOME ADMIN!</div>
+    <div class="h6 text-center">HRDMO Document Request System</div>
+</div>
+
+<div class="container p-4">
+    <div fxLayout="row" fxLayoutAlign="space-between center" fxLayout.sm="column" fxLayout.xs="column" fxLayoutGap="20px">
+        <mat-card fxFlex>
+            <span class="label">Total Requests</span>
+            <span class="count">{{ requestCount.totalCount }}</span>
+        </mat-card>
+        <mat-card fxFlex>
+            <span class="label">Today's Requests</span>
+            <span class="count">{{ requestCount.todayCount }}</span>
+        </mat-card>
+    </div>
+</div>

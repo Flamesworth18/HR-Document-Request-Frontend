@@ -1,0 +1,40 @@
+
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="text-primary">Director List</h2>
+		</div>
+        <div class="col-6 text-end">
+            <a class="btn btn-primary" (click)="addDirector()">
+                <i class="fa-solid fa-circle-plus"></i> &nbsp; Add Director
+			</a>
+		</div>
+	</div>
+    <br /><br />
+
+<table class="table table-hover table-striped" style="width:100%">
+    <thead>
+        <tr>
+            <th>
+                Director Name
+			</th>
+            <th></th>
+            <th></th>
+		</tr>
+	</thead>
+    <tbody *ngIf="!(loader._isLoading | async)">
+            <tr *ngFor="let director of directors">
+                <td width="100%">
+                    {{ director.name }}
+				</td>
+                <td width="30%">
+                   <a class="btn btn-primary" (click)="editDirector(director)"> <i class="fa-solid fa-pen-to-square"></i> Edit</a>
+				</td>
+                <td width="30%">
+                    <a class="btn btn-danger" (click)="confirmDelete(director.id)"> <i class="fa-solid fa-trash"></i> Delete</a>
+                </td>
+			</tr>
+    </tbody>
+
+</table>
+</div>

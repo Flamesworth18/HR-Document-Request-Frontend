@@ -1,0 +1,7 @@
+<div *ngIf="loader._isLoading | async" class="loader-container">
+    <mat-progress-bar class="mat-progrss-bar" mode="indeterminate"></mat-progress-bar>
+</div>
+<app-user-navigation-bar *ngIf="isUserValid && !isPrint"></app-user-navigation-bar>
+<app-admin-navigation-bar *ngIf="isAdminValid && !isPrint"></app-admin-navigation-bar>
+<app-body></app-body>
+<app-footer *ngIf="(isUserValid || isAdminValid) && !isPrint"></app-footer>

@@ -1,0 +1,19 @@
+<div class="container">
+    <form [formGroup]="createDocumentForm" (ngSubmit)="createDocument()">
+        <div class="border p-3 mt-4">
+            <div class="row pb-2">
+                <h2 class="text-primary">Create Document</h2>
+                <hr />
+            </div>
+            <div class="mb-3">
+                <label for="Name">Document Name</label>
+                <input for="Name" class="form-control" id="name" type="text" formControlName="name" placeholder="Enter document name..." required/>
+                <span for="Name" class="text-danger"></span>
+            </div>
+            <button type="submit" [disabled]="createDocumentForm.invalid" class="btn btn-primary" style="width:150px">Create Document</button>
+            <a (click)="navigateToUserList()" class="btn btn-secondary mx-1" style="width:150px">
+                Back to List
+            </a>
+        </div>
+    </form>
+</div>

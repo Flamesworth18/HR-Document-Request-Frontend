@@ -1,0 +1,19 @@
+<div class="container">
+    <form [formGroup]="editAmountForm" (ngSubmit)="editAmount()">
+        <div class="border p-3 mt-4">
+            <div class="row pb-2">
+                <h2 class="text-primary">Edit Amount</h2>
+                <hr />
+            </div>
+            <div class="mb-3">
+                <label>Amount</label>
+                <input class="form-control" [(ngModel)]="tempAmount.number" id="number" type="text" formControlName="number" placeholder="Enter amount..." required/>
+                <span class="text-danger"></span>
+            </div>
+            <button type="submit" [disabled]="editAmountForm.invalid" class="btn btn-primary" style="width:150px">Edit Amount</button>
+            <a (click)="navigateToAmountList()" class="btn btn-secondary mx-1" style="width:150px">
+                Back to List
+            </a>
+        </div>
+    </form>
+</div>
