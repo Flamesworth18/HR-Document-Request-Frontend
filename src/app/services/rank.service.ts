@@ -8,7 +8,7 @@ import { Rank } from '../models/rank.model';
 })
 export class RankService {
 
-  readonly rankURL = "https://localhost:7018/api/rank/";
+  readonly rankURL = "https://documentrequestapp.azurewebsites.net/api/rank/";
 
   rank: Rank = {
     id: '',

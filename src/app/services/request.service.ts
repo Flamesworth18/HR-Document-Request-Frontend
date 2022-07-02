@@ -8,7 +8,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 })
 export class RequestService {
 
-  readonly requestURL = "https://localhost:7018/api/requests/";
+  readonly requestURL = "https://documentrequestapp.azurewebsites.net/api/requests/";
 
   request: Request = {
     id: '',

@@ -8,7 +8,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 })
 export class AmountService {
 
-  readonly amountURL = "https://localhost:7018/api/amount/";
+  readonly amountURL = "https://documentrequestapp.azurewebsites.net/api/amount/";
 
   amount: Amount = {
     id: '',

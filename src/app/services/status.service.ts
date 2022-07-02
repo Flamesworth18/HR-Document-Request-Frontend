@@ -8,7 +8,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 })
 export class StatusService {
 
-  readonly statusURL = "https://localhost:7018/api/status/";
+  readonly statusURL = "https://documentrequestapp.azurewebsites.net/api/status/";
 
   status: Status = {
     id: '',

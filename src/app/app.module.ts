@@ -110,7 +110,7 @@ export function tokenGetter(){
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,
-        allowedDomains: ["localhost:7018"],
+        allowedDomains: ["https://documentrequestapp.azurewebsites.net"],
         disallowedRoutes: []
       }
     }),

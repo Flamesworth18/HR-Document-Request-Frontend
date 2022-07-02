@@ -8,7 +8,7 @@ import { RequestCount } from '../models/requestCount.model';
 })
 export class RequestCountService {
 
-  readonly requestCountURL = "https://localhost:7018/api/requestcount/";
+  readonly requestCountURL = "https://documentrequestapp.azurewebsites.net/api/requestcount/";
 
   constructor(
     private http: HttpClient

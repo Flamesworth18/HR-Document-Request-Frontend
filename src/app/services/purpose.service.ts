@@ -8,7 +8,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 })
 export class PurposeService {
 
-  readonly purposeURL = "https://localhost:7018/api/purpose/";
+  readonly purposeURL = "https://documentrequestapp.azurewebsites.net/api/purpose/";
 
   purpose: Purpose = {
     id: '',

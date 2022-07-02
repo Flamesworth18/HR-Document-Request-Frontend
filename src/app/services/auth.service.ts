@@ -17,7 +17,7 @@ import { UserToken } from '../models/usertoken.model';
 })
 export class AuthService {
 
-  readonly accountURL = "https://localhost:7018/api/Accounts/";
+  readonly accountURL = "https://documentrequestapp.azurewebsites.net/api/Accounts/";
   readonly token_name:string = "token";
   readonly refresh_token_name:string = "refreshToken"
 

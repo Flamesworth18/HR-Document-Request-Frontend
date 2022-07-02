@@ -8,7 +8,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 })
 export class DirectorService {
 
-  readonly directorURL = "https://localhost:7018/api/director/";
+  readonly directorURL = "https://documentrequestapp.azurewebsites.net/api/director/";
 
   director: Director = {
     id: '',

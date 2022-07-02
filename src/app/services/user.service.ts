@@ -10,7 +10,7 @@ import { User } from '../models/user.model';
 })
 export class UserService {
 
-  readonly userURL = "https://localhost:7018/api/users/";
+  readonly userURL = "https://documentrequestapp.azurewebsites.net/api/users/";
 
   user:User = {
     id:'',
